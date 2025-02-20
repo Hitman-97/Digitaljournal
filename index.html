@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Journal</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Digital Journal</h1>
+    </header>
+    
+    <section id="mood-log">
+      <h2>Log Your Mood</h2>
+      <form id="mood-form">
+        <label for="mood">Mood:</label>
+        <select id="mood" name="mood" required>
+          <option value="happy">Happy</option>
+          <option value="sad">Sad</option>
+          <option value="neutral">Neutral</option>
+          <option value="angry">Angry</option>
+          <option value="excited">Excited</option>
+        </select>
+
+        <label for="note">Notes:</label>
+        <textarea id="note" name="note" placeholder="Add a note..." required></textarea>
+
+        <button type="submit">Save Entry</button>
+      </form>
+    </section>
+
+    <section id="mood-history">
+      <h2>Your Mood History</h2>
+      <div id="history-list">
+        <!-- Mood entries will appear here -->
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
