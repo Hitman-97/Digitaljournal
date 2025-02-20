@@ -1,0 +1,20 @@
+// Modify loadEntries to fetch from the backend
+const loadEntries = async () => {
+  try {
+    const response = await fetch('/mood');
+    const data = await response.json();
+    historyList.innerHTML = '';
+    data.forEach(entry => {
+      const div = document.createElement('div');
+      div.classList.add('history-entry');
+      div.innerHTML = `
+        <p><strong>Mood:</strong> ${entry.mood}</p>
+        <p><strong>Notes:</strong> ${entry.note}</p>
+        <p><strong>Timestamp:</strong> ${entry.timestamp}</p>
+      `;
+      historyList.appendChild(div);
+    });
+  } catch (err) {
+    console.error('Error loading entries', err);
+  }
+};
